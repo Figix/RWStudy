@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        block{
+            display: inline-block;
+            margin-left: 100px;
+            
+            background-color: white;
+            width: 400px;
+            height: 400px;
+            padding: 30px;
+            text-align: center;
+            position: absolute;
+        }
+        .wwi{
+            display: block;
+            height: 200;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wwi">
+        <P>하노이의 탑</P>
+        <button>초기화</button>
+    </div>
+    <div style="position: relative;">
+        <block id="redBox" style="border: 1px solid red;">
+            
+            <div class="redNemo">1</div>
+            <div class="redNemo">2</div>
+            <div class="redNemo">3</div>
+            <div class="redNemo">4</div>
+            <div class="redNemo">5</div>
+            <div class="redNemo">6</div>
+            <div class="redNemo">7</div>
+            <div class="redNemo">8</div>
+            <div class="redNemo">9</div>
+            <div class="redNemo">10</div>
+
+        </block>
+        <block id="greenBox" style="border: 1px solid green; left: 500px;">aaaa</block>
+        <block id="blueBox" style="border: 1px solid blue; left: 1000px;"></block>
+    </div>
+    <script>
+        var colorsArr = [
+            'red',
+            'orange',
+            'yellow',
+            'green',
+            'blue',
+            'indigo',
+            'violet'
+        ];
+        var colorvar =0; //이 변수로 배열의 인덱스를 바꾸면 색을 배열안에 넣어서 줄바꿈 때마다 인덱스를 바꿔서 넣을 생각
+
+        var blockcount ="";
+        var j;
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        var redBox = document.getElementsByClassName("redNemo");
+        for(var i=redBox.length+redBox.length-1;i>=1;i=i-2){
+            for(j=1;j<=i;j++){
+                blockcount += "■";
+            }
+            console.log(blockcount+i);
+            console.log(colorsArr[colorvar]);
+            
+            redBox[colorvar].innerHTML='<div style="color:'+colorsArr[colorvar]+'">'+blockcount+'<div>'
+            //폰트 사이즈조절
+
+            blockcount="";//초기화
+            colorvar++; //출력후 색변경하려고 넣음
+        }       colorvar =0;    //이 변수가 컬러변수 초기화하는 변수
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    </script>
+
+</body>
+</html>
+
+
