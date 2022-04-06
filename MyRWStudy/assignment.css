@@ -1,0 +1,16 @@
+block{
+    display: inline-block;
+    margin-left: 100px;
+            
+    background-color: white;
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+    text-align: center;
+    position: absolute;
+}
+.wwi{
+    display: block;
+    height: 200;
+    margin: 0px;
+}
