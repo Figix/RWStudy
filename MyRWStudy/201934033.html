@@ -12,24 +12,18 @@
     <div class="wwi">
         <P>하노이의 탑</P>
         <button type="button" onclick='init()'>초기화</button>
+        <button type="button" onclick="reverse()">리버스</button>
     </div>
     <div style="position: relative;">
-        <block id="redBox" style="border: 1px solid red;">
-            
-            <div class="redNemo">1</div>
-            <div class="redNemo">2</div>
-            <div class="redNemo">3</div>
-            <div class="redNemo">4</div>
-            <div class="redNemo">5</div>
-            <div class="redNemo">6</div>
-            <div class="redNemo">7</div>
-            <div class="redNemo">8</div>
-            <div class="redNemo">9</div>
-            <div class="redNemo">10</div>
-
+        <block id="redBox" style="border: 1px solid red;" onclick="Click_redArea()">
+            <div class="redNemo" style="position: relative; top: 130px;">생성!</div>
         </block>
-        <block id="greenBox" style="border: 1px solid green; left: 500px;">aaaa</block>
-        <block id="blueBox" style="border: 1px solid blue; left: 1000px;"></block>
+        <block id="greenBox" style="border: 1px solid green; left: 480px;" onclick="Click_greenArea()">
+            <div class="greenNemo" style="position: relative; top: 130px;"></div>
+        </block>
+        <block id="blueBox" style="border: 1px solid blue; left: 960px;" onclick="Click_blueArea()">
+            <div class="blueNemo" style="position: relative; top: 130px;"></div>
+        </block>
     </div>
 
 </body>
