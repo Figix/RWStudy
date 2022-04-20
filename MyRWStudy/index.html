@@ -5,17 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        div{
-        width : 200px;
-        height : 200px;
-        color : red;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="HanoiStyle.css">
+    <script type="text/javascript" src="ClickManager.js"></script>
+    <script type="text/javascript" src="init.js"></script>
+    <script type="text/javascript" src="reverse.js"></script>
 </head>
 <body>
-    <div></div>
-    <br>
-    <div></div>
+    <div class="banner">
+        <P>하노이의 탑</P>
+        <button type="button" onclick='init()'>초기화</button>
+        <button type="button" onclick="reverse()">리버스</button>
+    </div>
+    <div style="position: relative;">
+        <block id="AreaLeft" onclick="Area_Click_Manager('Left')">
+            <div class="LeftNemo" >생성!</div>
+        </block>
+        <block id="AreaCenter" onclick="Area_Click_Manager('Center')">
+            <div class="CenterNemo"></div>
+        </block>
+        <block id="AreaRight" onclick="Area_Click_Manager('Right')">
+            <div class="RightNemo"></div>
+        </block>
+    </div>
+
 </body>
 </html>
+
+
