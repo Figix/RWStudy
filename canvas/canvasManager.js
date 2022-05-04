@@ -1,6 +1,15 @@
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d'); //player path
 var clickonoff=false;
+var colorlist=[
+    'red',
+    'orenge',
+    'yellow',
+    'green',
+    'blue',
+    'indigo',
+    'purple'
+]
 
 class Player{
     constructor(x,y,radius,Pcolor){
@@ -22,42 +31,47 @@ class Player{
 var p= new Player(100,100,30,'violet');
 p.draw();
 
-
-
-function clicker(){
+function bulletclicker(){
     let x = event.offsetX;
     let y = event.offsetY;  
-    console.log(x,y);
 
-    // context.beginPath();
-    // context.arc(x,y,10,0,2*Math.PI);
-    // context.fillStyle = 'skyblue';
-    // context.fill();
-    // context.closePath();
-
-    clickonoff = true;
-}
-function clicker2(){
-    let x = event.offsetX;
-    let y = event.offsetY;  
-    console.log(x,y);
-    if(clickonoff){
     context.beginPath();
     context.arc(x,y,10,0,2*Math.PI);
     context.fillStyle = 'skyblue';
     context.fill();
     context.closePath();
-    }
 }
 
-function clicker3(){
+
+function curveclicker(){
+    let x = event.offsetX;
+    let y = event.offsetY;  
+    console.log(x,y);
+
+    clickonoff = true;
+}
+colorvar=0;
+function curveclicker2(){
+    let x = event.offsetX;
+    let y = event.offsetY;  
+    if(clickonoff){
+    context.beginPath();
+    context.arc(x,y,10,0,2*Math.PI);
+    context.fillStyle = colorlist[colorvar];
+    context.fill();
+    context.closePath();
+    colorvar++;
+    colorvar=colorvar%7;
+    }
+    console.log(colorlist[colorvar]);
+}
+
+function curveclicker3(){
     clickonoff = false;
 }
-canvas.addEventListener('mousedown',  function(){clicker('')});
-
-canvas.addEventListener('mousemove',  function(){clicker2('')});
-  
-canvas.addEventListener('click', function(){clicker3('')});
+canvas.addEventListener('mousedown',  function(){curveclicker('')});
+canvas.addEventListener('mousemove',  function(){curveclicker2('')});
+canvas.addEventListener('click', function(){curveclicker3('')});
 
 
 // offsetXY 노드 객체 기준
